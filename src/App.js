@@ -12,7 +12,11 @@ export default function App() {
     },
     typography: {
       code: {
-        border: "1px solid red"
+        borderBottom: "1px dotted #ccc",
+        borderTop: "1px dotted #ccc",
+        borderRadius: "5px",
+        padding: "3px",
+        background: "#ccc2"
       },
       button: {
         border: "1px solid transparent"

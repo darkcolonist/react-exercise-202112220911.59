@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { monokai } from "react-syntax-highlighter/dist/esm/styles/hljs";
@@ -53,9 +54,15 @@ export default function Exercise3(props) {
     <>
       <h2>Exercise 3</h2>
       <p>
-        using <code>.filter</code> return all countries{" "}
-        <code>name, iso2, and region</code> that has a region of “Asia”. Result{" "}
-        should be an Array of objects
+        using{" "}
+        <Typography variant="code" component="code">
+          .filter
+        </Typography>{" "}
+        return all countries{" "}
+        <Typography variant="code" component="code">
+          name, iso2, and region
+        </Typography>{" "}
+        that has a region of “Asia”. Result should be an Array of objects
       </p>
 
       <p>total records found: {myData.length}</p>

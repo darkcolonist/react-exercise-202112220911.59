@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { monokai } from "react-syntax-highlighter/dist/esm/styles/hljs";
@@ -35,8 +36,19 @@ export default function Exercise2(props) {
     <>
       <h2>Exercise 2</h2>
       <p>
-        Using <code>.find</code> find the country with iso3 of “PHP”, and log
-        the result.
+        Using{" "}
+        <Typography variant="code" component="code">
+          .find
+        </Typography>{" "}
+        find the country with{" "}
+        <Typography variant="code" component="code">
+          iso3
+        </Typography>{" "}
+        of{" "}
+        <Typography variant="code" component="code">
+          “PHP”
+        </Typography>{" "}
+        , and log the result.
       </p>
 
       <p>total records found: {JSON.parse(myData).length}</p>

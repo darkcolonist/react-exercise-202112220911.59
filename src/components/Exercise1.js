@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { monokai } from "react-syntax-highlighter/dist/esm/styles/hljs";
@@ -39,8 +40,12 @@ export default function Exercise1(props) {
     <>
       <h2>Exercise 1</h2>
       <p>
-        Using <code>.map</code> return all countries name with the emoji as
-        prefix. ex (🇵🇭 Philippines) as an array of strings.
+        Using{" "}
+        <Typography variant="code" component="code">
+          .map
+        </Typography>{" "}
+        return all countries name with the emoji as prefix. ex (🇵🇭 Philippines)
+        as an array of strings.
       </p>
 
       <p>total records found: {counter}</p>
