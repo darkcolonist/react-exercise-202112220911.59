@@ -8,7 +8,7 @@ function formatData(rawData) {
 
 export default function Exercise1(props) {
   const { apiData } = props;
-  const [myData, setMyData] = useState(formatData("preparing your data..."));
+  const [myData, setMyData] = useState([]);
   const [done, setDone] = useState(false);
   const [counter, setCounter] = useState(0);
 
@@ -23,17 +23,15 @@ export default function Exercise1(props) {
     if (apiData == null) return;
     if (apiData === null || apiData.length === 0) return;
 
-    let dispData = "";
+    let tmpData = [];
 
-    const tmpResult = apiData.map((el) => {
+    apiData.map((el) => {
       setCounter((counter) => counter + 1);
       const { emoji, name } = el;
-
-      dispData += `${emoji} ${name}\n`;
-
+      tmpData.push(`${emoji} ${name}`);
       return { emoji, name };
     });
-    setMyData(dispData);
+    setMyData(tmpData);
     setDone(true);
   }, [apiData]);
 
@@ -47,7 +45,7 @@ export default function Exercise1(props) {
 
       <p>total records found: {counter}</p>
       <SyntaxHighlighter {...shoptions} language="plaintext">
-        {myData || "no records found"}
+        {formatData(myData)}
       </SyntaxHighlighter>
     </>
   );
