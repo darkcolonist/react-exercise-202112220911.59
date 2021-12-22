@@ -3,12 +3,14 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { monokai } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 function formatData(rawData) {
+  if (rawData.length === 0) return "empty result set";
+
   return JSON.stringify(rawData, null, 2);
 }
 
 export default function Exercise3(props) {
   const { apiData } = props;
-  const [myData, setMyData] = useState(formatData("preparing your data..."));
+  const [myData, setMyData] = useState([]);
   const [done, setDone] = useState(false);
 
   const shstyle = monokai;
@@ -25,7 +27,9 @@ export default function Exercise3(props) {
     setDone(true);
 
     // [FORMULA BEGIN]
-    const tmpResult = apiData.filter((el, index, arr) => {
+    const tmpResult = [];
+
+    apiData.filter((el, index, arr) => {
       if (el.region === "Asia") {
         const { name, iso2, region } = el;
         const tmp = {
@@ -33,29 +37,30 @@ export default function Exercise3(props) {
           iso2,
           region
         };
-        arr[index] = tmp;
+        // arr[index] = tmp;
+        tmpResult.push(tmp);
 
         return true;
       }
     });
     // [FORMULA END]
 
-    if (tmpResult !== undefined) setMyData(formatData(tmpResult));
-    else setMyData("data cannot be found");
+    if (tmpResult !== undefined) setMyData(tmpResult);
+    else setMyData([]);
   }, [apiData]);
 
   return (
     <>
       <h2>Exercise 3</h2>
       <p>
-        using <code>.filter</code> return all countries
-        <code>name, iso2, and region</code> that has a region of “Asia”. Result
+        using <code>.filter</code> return all countries{" "}
+        <code>name, iso2, and region</code> that has a region of “Asia”. Result{" "}
         should be an Array of objects
       </p>
 
-      <p>total records found: {JSON.parse(myData).length}</p>
+      <p>total records found: {myData.length}</p>
       <SyntaxHighlighter {...shoptions} language="plaintext">
-        {myData || "no records found"}
+        {formatData(myData)}
       </SyntaxHighlighter>
     </>
   );
