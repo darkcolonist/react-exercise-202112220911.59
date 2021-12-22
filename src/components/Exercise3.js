@@ -54,7 +54,7 @@ export default function Exercise3(props) {
     <>
       <h2>Exercise 3</h2>
       <p>
-        using{" "}
+        Using{" "}
         <Typography variant="code" component="code">
           .filter
         </Typography>{" "}

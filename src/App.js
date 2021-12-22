@@ -1,6 +1,12 @@
 import React from "react";
 import { HashRouter } from "react-router-dom";
-import { createTheme, CssBaseline, Grid, ThemeProvider } from "@mui/material";
+import {
+  createTheme,
+  CssBaseline,
+  Grid,
+  ThemeProvider,
+  Typography
+} from "@mui/material";
 
 import TopNavigation from "./components/TopNavigation";
 import AppRoutes from "./components/AppRoutes";
@@ -28,7 +34,7 @@ export default function App() {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <h1>API Demo</h1>
+        <Typography variant="h1">API Demo</Typography>
         <HashRouter>
           <Grid container spacing={2}>
             <TopNavigation />

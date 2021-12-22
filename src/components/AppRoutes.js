@@ -7,6 +7,7 @@ import Exercise1 from "./Exercise1";
 import Exercise2 from "./Exercise2";
 import Exercise3 from "./Exercise3";
 import Exercise4 from "./Exercise4";
+import Exercise5 from "../Exercise5";
 
 export default function AppRoutes(props) {
   const [apiData, setApiData] = useState();
@@ -38,6 +39,9 @@ export default function AppRoutes(props) {
         </Route>
         <Route path="/exe4" exact={true}>
           <Exercise4 {...exerciseProps} />
+        </Route>
+        <Route path="/exe5" exact={true}>
+          <Exercise5 {...exerciseProps} />
         </Route>
         <Route path="/" exact={true}>
           <HomePage />
