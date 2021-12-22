@@ -37,9 +37,6 @@ const grocery = [
 
 const fruits = ["🍉", "🍊", "🍑"];
 const nonfruits = ["🍕", "🌭"];
-
-const total = [];
-
 // Grocery List
 
 // Calculate the total price of a grocery item
@@ -115,8 +112,9 @@ export default function Exercise4(props) {
     });
 
     setMyData(formatData(myGroceryTotals));
+    return true;
     // [FORMULA END]
-  }, [grocery]);
+  }, []);
 
   return (
     <>
@@ -125,7 +123,7 @@ export default function Exercise4(props) {
         {projectSpec}
       </SyntaxHighlighter>
 
-      <p>total records found: {JSON.parse(myData).length}</p>
+      <p>result:</p>
       <SyntaxHighlighter {...shoptions} language="plaintext">
         {myData || "no records found"}
       </SyntaxHighlighter>
