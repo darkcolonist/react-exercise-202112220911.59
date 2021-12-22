@@ -40,9 +40,9 @@ export default function AppRoutes(props) {
         <Route path="/exe4" exact={true}>
           <Exercise4 {...exerciseProps} />
         </Route>
-        <Route path="/exe5" exact={true}>
+        {/* <Route path="/exe5" exact={true}>
           <Exercise5 {...exerciseProps} />
-        </Route>
+        </Route> */}
         <Route path="/" exact={true}>
           <HomePage />
         </Route>
